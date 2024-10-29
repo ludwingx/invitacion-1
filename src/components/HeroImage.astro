@@ -1,0 +1,88 @@
+---
+const { src, alt, title, subtitle } = Astro.props;
+---
+
+<div class="hero-image-container">
+  <img src={src} alt={alt} class="hero-image" />
+
+  <!-- Texto superpuesto en la imagen -->
+  <div class="overlay-text">
+    <h1 class="title">{title}</h1>
+    <p class="subtitle">{subtitle}</p>
+  </div>
+
+  <!-- Botón con mini flecha hacia abajo -->
+  <button class="scroll-button">
+    ﹀
+  </button>
+</div>
+
+<style>
+  /* Contenedor principal */
+  .hero-image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Cambia a 100vh para ocupar toda la altura de la ventana */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  @media screen and (max-width: 768px) {
+    .hero-image-container {
+      height: 50vh;
+    }
+  }
+  /* Imagen de fondo que sobresale */
+  .hero-image {
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    position: absolute;
+    z-index: -1;
+    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor sin deformarse */
+    filter: brightness(0.5); /* Oscurece la imagen ligeramente para resaltar el texto */
+  }
+
+  /* Texto superpuesto */
+  .overlay-text {
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+    padding: 20px; /* Espaciado en los laterales */
+  }
+
+  /* Estilos para el título */
+  .title {
+    font-size: 3rem; /* Aumenta el tamaño del título para pantallas grandes */
+    font-weight: bold;
+    margin: 0;
+  }
+
+  /* Estilos para el subtítulo */
+  .subtitle {
+    font-size: 1.5rem; /* Aumenta el tamaño del subtítulo para mejor visibilidad */
+    font-weight: 300;
+    margin-top: 0.5rem;
+  }
+
+  /* Estilos para el botón de desplazamiento */
+  .scroll-button {
+    position: absolute; /* Permite posicionar el botón */
+    bottom: 20px; /* Espacio desde el fondo del contenedor */
+    left: 50%; /* Centra el botón horizontalmente */
+    transform: translateX(-50%); /* Ajusta para centrar */
+    background-color: rgba(0, 0, 0, 0); /* Fondo semi-transparente */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 1.5rem; /* Tamaño de la flecha */
+    z-index: 2; /* Asegúrate de que esté por encima de la imagen */
+  }
+
+  .scroll-button:hover {
+    background-color: rgba(0, 0, 0, 0.274); /* Efecto hover */
+  }
+</style>

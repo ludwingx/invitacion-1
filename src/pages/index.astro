@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AudioPlayer from "../components/AudioPlayer.astro";
+import CountDown from "../components/CountDown.astro";
+import Count from "../components/Count";
+const audioSrc = "/music/amtrak.mp3";
+const targetDate = new Date('December 25, 2024 00:00:00'); // Fecha objetivo
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <AudioPlayer src={audioSrc} />
+
+    <div class="initial-text">
+      <h1 class="title">Estás Invitado!</h1>
+      <p class="subtitle">
+        Queremos que seas parte de este momento tan especial.
+      </p>
+    </div>
+
+	<Count client:load targetDate={targetDate} ></Count>
+  </main>
+</Layout>
+
+<style>
+  main {
+    min-height: 100vh; /* Asegura que el main ocupe al menos toda la altura de la ventana */
+    box-sizing: border-box; /* Incluye padding en el cálculo del ancho/alto */
+  }
+
+  .initial-text {
+	text-align: center; /* Centra el texto */
+
+  }
+</style>

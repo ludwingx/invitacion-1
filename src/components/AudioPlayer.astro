@@ -1,0 +1,32 @@
+---
+const { src } = Astro.props; // Puedes pasar el src y el título del audio como props
+---
+
+<div class="audio-player-container">
+  <audio controls>
+    <source src={src} type="audio/mpeg" />
+   
+  </audio>
+</div>
+
+<style>
+  .audio-player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px;
+    margin: 20px 0; /* Espaciado vertical */
+   
+  }
+
+  .audio-title {
+    margin-bottom: 10px; /* Espacio entre el título y el reproductor */
+    font-size: 1.5rem; /* Tamaño de fuente del título */
+    text-align: center; /* Centra el texto */
+  }
+
+  audio {
+    width: 100%; /* Ancho completo del reproductor */
+  }
+</style>
