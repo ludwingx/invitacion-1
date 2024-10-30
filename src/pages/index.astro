@@ -1,10 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import AudioPlayer from "../components/AudioPlayer.astro";
-import CountDown from "../components/CountDown.astro";
-import Count from "../components/Count";
+import Count from "../components/count/Count";
+import Button from "../components/Button.astro";
+import WeddingEvent from "../components/WeddingEvent .astro";
 const audioSrc = "/music/amtrak.mp3";
-const targetDate = new Date('December 25, 2024 00:00:00'); // Fecha objetivo
+const targetDate = new Date("December 25, 2024 00:00:00"); // Fecha objetivo
 ---
 
 <Layout title="Welcome to Astro.">
@@ -12,24 +13,46 @@ const targetDate = new Date('December 25, 2024 00:00:00'); // Fecha objetivo
     <AudioPlayer src={audioSrc} />
 
     <div class="initial-text">
-      <h1 class="title">Estás Invitado!</h1>
+      <h2 class="title">Estás Invitado!</h2>
       <p class="subtitle">
         Queremos que seas parte de este momento tan especial.
       </p>
     </div>
 
-	<Count client:load targetDate={targetDate} ></Count>
+    <Count client:load targetDate={targetDate} />
+
+    <div class="btn">
+      <Button
+        url="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda&dates=20241225%2F20241226&details=Celebraci%C3%B3n%20de%20nuestra%20boda!&sf=true"
+        text="AGENDAR BODA"
+      />
+    </div>
+
+    <WeddingEvent />
   </main>
 </Layout>
 
 <style>
   main {
-    min-height: 100vh; /* Asegura que el main ocupe al menos toda la altura de la ventana */
-    box-sizing: border-box; /* Incluye padding en el cálculo del ancho/alto */
+    min-height: 100vh;
+    box-sizing: border-box;
   }
 
   .initial-text {
-	text-align: center; /* Centra el texto */
-
+    text-align: center;
+    margin: 0px 20%;
+  }
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
   }
 </style>
