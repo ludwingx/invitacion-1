@@ -1,13 +1,22 @@
+---
+import Button from "./Button.astro";
+---
+
 <div class="weddingEvent">
     <img src="/anillos.png" alt="">
-    <h2>CEREMONIA</h2>
-    <p>Iglesia Santisima Virgen</p>
-    <p>Te esperamos el</p>
+    <h2 class="title">CEREMONIA</h2>
+    <p class="subtitle1">Iglesia Santisima Virgen</p>
+    <p class="subtitle2">Te esperamos el</p>
     <div class="date-hour">
         <span class="date">27 SEP</span>
         <span class="separator">|</span>
         <span class="hour">19:00 PM</span>
     </div>
+    <br>
+    <p class="subtitle1">Avenida uno 118</p>
+    <p class="subtitle2">Ciudad del lugar, pais</p>
+
+    <Button url="a" text="VER UBICACIÓN"></Button>
 </div>
 
 <style>
@@ -16,11 +25,36 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-
+        margin-bottom: 40px;
     }
     .weddingEvent img{
         margin-top: 30px;
         width: 80px;
         
     }
+    .weddingEvent .title{
+        margin-top: 10px;
+    }
+    .weddingEvent .subtitle1 {
+        font-size: 18px;
+        margin-top: -10px;
+    }
+    .weddingEvent .subtitle2 {
+        font-size: 18px;
+        margin-top: -10px;
+    }
+    .weddingEvent .date-hour {
+        font-size: 25px;
+    }
+    .weddingEvent .date {
+        margin-right: 10px;
+    }
+    .weddingEvent .separator {
+        margin: 0 10px;
+        font-size: 2rem;
+    }
+    .weddingEvent .hour {
+        margin-left: 10px;
+    }
+
 </style>
