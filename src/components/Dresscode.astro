@@ -1,0 +1,28 @@
+---
+const { imgD, title, subtitle1, subtitle2 } = Astro.props;
+---
+<div class="dresscode">
+    <img src={imgD} alt="">
+    <h2 class="title">{title}</h2>
+    <p class="subtitle1">{subtitle1}</p>
+    <p class="subtitle2">{subtitle2}</p>
+</div>
+
+<style>
+    .dresscode img{
+        width: 90px;
+    }
+    .dresscode{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .dresscode .title{
+        font-size: 1.5rem;
+        margin-bottom: -10px;
+    }
+    .dresscode .subtitle1{
+        margin-bottom: -10px;
+    }
+</style>

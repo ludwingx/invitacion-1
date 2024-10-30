@@ -4,6 +4,7 @@ import AudioPlayer from "../components/AudioPlayer.astro";
 import Count from "../components/count/Count";
 import Button from "../components/Button.astro";
 import WeddingEvent from "../components/WeddingEvent .astro";
+import Dresscode from "../components/Dresscode.astro";
 const audioSrc = "/music/amtrak.mp3";
 const targetDate = new Date("December 25, 2024 00:00:00"); // Fecha objetivo
 ---
@@ -24,14 +25,36 @@ const targetDate = new Date("December 25, 2024 00:00:00"); // Fecha objetivo
     <div class="btn">
       <Button
         url="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda&dates=20241225%2F20241226&details=Celebraci%C3%B3n%20de%20nuestra%20boda!&sf=true"
-        text="AGENDAR BODA"
+        text="AGENDAR RECORDATORIO"
       />
     </div>
 
-    <WeddingEvent />
-    <WeddingEvent />
-    <br>
-    <h1 class="initial-text">DRESSCODE</h1>
+    <WeddingEvent
+      img="/anillos.png"
+      title="CEREMONIA"
+      subtitle1="Iglesia Santisima Virgen"
+      subtitle2="Te esperamos el"
+      date="27 SEP"
+      hour="19:00 PM"
+      direction1="Avenida uno 118"
+      direction2="Ciudad del lugar, pais"
+    />
+    <WeddingEvent
+      img="/copas.png"
+      title="CELEBRACIÓN"
+      subtitle1="La celebración se realizara en"
+      subtitle2="Del Carril Evento"
+      date="27 SEP"
+      hour="19:00 PM"
+      direction1="Calle, #123"
+      direction2="Ciudad del lugar, pais"
+    />
+    <br />
+    <Dresscode 
+      imgD="/trajes.png" 
+      title="DRESSCODE" 
+      subtitle1="Formal" 
+      subtitle2="¡Luce tu mejor look!" />
   </main>
 </Layout>
 

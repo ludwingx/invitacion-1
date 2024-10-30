@@ -1,20 +1,22 @@
 ---
 import Button from "./Button.astro";
+
+const { img, title, subtitle1, subtitle2, date, hour, direction1,  direction2 } = Astro.props;
 ---
 
 <div class="weddingEvent">
-    <img src="/anillos.png" alt="">
-    <h2 class="title">CEREMONIA</h2>
-    <p class="subtitle1">Iglesia Santisima Virgen</p>
-    <p class="subtitle2">Te esperamos el</p>
+    <img src={img} alt="">
+    <h2 class="title">{title}</h2>
+    <p class="subtitle1">{subtitle1}</p>
+    <p class="subtitle2">{subtitle2}</p>
     <div class="date-hour">
-        <span class="date">27 SEP</span>
+        <span class="date">{date}</span>
         <span class="separator">|</span>
-        <span class="hour">19:00 PM</span>
+        <span class="hour">{hour}</span>
     </div>
     <br>
-    <p class="subtitle1">Avenida uno 118</p>
-    <p class="subtitle2">Ciudad del lugar, pais</p>
+    <p class="subtitle1">{direction1}</p>
+    <p class="subtitle2">{direction2}</p>
 
     <Button url="a" text="VER UBICACIÓN"></Button>
 </div>
