@@ -5,6 +5,7 @@ import Count from "../components/count/Count";
 import Button from "../components/Button.astro";
 import WeddingEvent from "../components/WeddingEvent .astro";
 import Dresscode from "../components/Dresscode.astro";
+import ConfirmAssistance from "../components/ConfirmAssistance.astro";
 const audioSrc = "/music/amtrak.mp3";
 const targetDate = new Date("December 25, 2024 00:00:00"); // Fecha objetivo
 ---
@@ -50,11 +51,14 @@ const targetDate = new Date("December 25, 2024 00:00:00"); // Fecha objetivo
       direction2="Ciudad del lugar, pais"
     />
     <br />
-    <Dresscode 
+    <Dresscode  
       imgD="/trajes.png" 
       title="DRESSCODE" 
       subtitle1="Formal" 
       subtitle2="¡Luce tu mejor look!" />
+    <ConfirmAssistance />
+
+
   </main>
 </Layout>
 
