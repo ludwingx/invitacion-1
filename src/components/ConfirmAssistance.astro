@@ -2,10 +2,27 @@
 import Button from "./Button.astro";
 ---
 
-<div>
-    <h2 class="title">Confirmar Asistencia</h2>
+<div class="confirmContainer">
+    <h2 class="title">CONFIRMAR ASISTENCIA</h2>
     <p class="subtitle">Por favor confirme su asistencia.</p>
-    <Button url="https://forms.gle/3vSMHW2ig4bBLhPV9" text="CONFIRMAR ASISTENCIA">
+    <Button url="https://forms.gle/3vSMHW2ig4bBLhPV9" text="CONFIRMAR TU ASISTENCIA">
         
     </Button>
 </div>
+
+<style>
+    .title{
+        font-size: 1.5rem;
+        margin-bottom: -10px;
+    }
+    .subtitle{
+        margin-bottom: 20px;
+    }
+    .confirmContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+</style>
