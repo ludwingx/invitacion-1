@@ -7,19 +7,22 @@
     font-family: Arial, sans-serif;
     color: #333;
 }
+
 /* Estilos de la Cuenta Regresiva */
 .countdown {
     display: flex;
     gap: 1rem;
-    justify-self: center;
     margin-top: 2rem;
 }
 
 .time {
+    display: flex;
+    flex-direction: column; /* Coloca el círculo y el texto en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
     text-align: center;
     font-size: 1rem;
     color: #444;
-    margin: 10px 
+    margin: 10px;
 }
 
 /* Estilos del Círculo */
@@ -29,13 +32,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #005782; /* Cambia este color al que prefieras */
+    background-color: #005782;
     color: #fff;
-    border-radius: 50%; /* Hace que el elemento sea circular */
+    border-radius: 50%;
     font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
-
+    margin-bottom: 0.5rem; /* Espacio entre el círculo y el texto */
 }
 
 /* Estilos Responsivos (Opcional) */

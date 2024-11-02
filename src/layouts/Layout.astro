@@ -1,5 +1,4 @@
 ---
-import HeroImage from '../components/HeroImage.astro';
 import '../components/count/Count.module.css';
 
 interface Props {
@@ -20,12 +19,6 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<HeroImage
-			src="https://www.elramovolador.com/wp-content/uploads/2020/06/preboda_en_begur.jpg"
-			alt="Imagen de Alba y Juan"
-			title="Alba & Juan"
-			subtitle="Nuestra boda"
-		/>
 		<slot />
 	</body>
 </html>

@@ -6,12 +6,34 @@ import Button from "../components/Button.astro";
 import WeddingEvent from "../components/WeddingEvent .astro";
 import Dresscode from "../components/Dresscode.astro";
 import ConfirmAssistance from "../components/ConfirmAssistance.astro";
+import PhotoCollage from "../components/PhotoCollage.astro";
+import WeAreWaiting from "../components/WeAreWaiting.astro";
+import HeroImage from "../components/HeroImage.astro";
 const audioSrc = "/music/amtrak.mp3";
 const targetDate = new Date("December 25, 2024 00:00:00"); // Fecha objetivo
+
+
+const photos = [
+    '/images/jtp.jpg',
+    '/images/jtp2.jpg',
+    '/images/jtp3.jpg',
+    '/images/jtp4.jpg',
+    '/images/jtp5.jpg'
+];
+
+const husband = "Juan";
+const wife = "Alba";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
+    <HeroImage
+			src="https://www.elramovolador.com/wp-content/uploads/2020/06/preboda_en_begur.jpg"
+			alt="Imagen de Alba y Juan"
+			subtitle="Nuestra boda"
+      husband={husband}
+      wife={wife}
+		/>
     <AudioPlayer src={audioSrc} />
 
     <div class="initial-text">
@@ -23,11 +45,10 @@ const targetDate = new Date("December 25, 2024 00:00:00"); // Fecha objetivo
 
     <Count client:load targetDate={targetDate} />
 
-    <div class="btn">
+    <div class="btnSchedule">
       <Button
         url="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda&dates=20241225%2F20241226&details=Celebraci%C3%B3n%20de%20nuestra%20boda!&sf=true"
-        text="AGENDAR RECORDATORIO"
-      />
+        text="AGENDAR RECORDATORIO"/>
     </div>
 
     <WeddingEvent
@@ -38,8 +59,8 @@ const targetDate = new Date("December 25, 2024 00:00:00"); // Fecha objetivo
       date="27 SEP"
       hour="19:00 PM"
       direction1="Avenida uno 118"
-      direction2="Ciudad del lugar, pais"
-    />
+      direction2="Ciudad del lugar, pais"/>
+      
     <WeddingEvent
       img="/copas.png"
       title="CELEBRACIÓN"
@@ -48,17 +69,16 @@ const targetDate = new Date("December 25, 2024 00:00:00"); // Fecha objetivo
       date="27 SEP"
       hour="19:00 PM"
       direction1="Calle, #123"
-      direction2="Ciudad del lugar, pais"
-    />
+      direction2="Ciudad del lugar, pais"/>
     <br />
     <Dresscode  
       imgD="/trajes.png" 
       title="DRESSCODE" 
       subtitle1="Formal" 
       subtitle2="¡Luce tu mejor look!" />
+    <PhotoCollage photos={photos} />
     <ConfirmAssistance />
-
-
+    <WeAreWaiting  husband={husband} wife={wife} />
   </main>
 </Layout>
 
@@ -79,10 +99,11 @@ const targetDate = new Date("December 25, 2024 00:00:00"); // Fecha objetivo
   .subtitle {
     font-size: 1.2rem;
   }
-  .btn {
+  .btnSchedule {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 </style>

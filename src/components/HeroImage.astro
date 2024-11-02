@@ -1,5 +1,6 @@
 ---
-const { src, alt, title, subtitle } = Astro.props;
+const { src, alt,  husband, wife, subtitle } = Astro.props;
+
 ---
 
 <div class="hero-image-container">
@@ -7,7 +8,7 @@ const { src, alt, title, subtitle } = Astro.props;
 
   <!-- Texto superpuesto en la imagen -->
   <div class="overlay-text">
-    <h1 class="title">{title}</h1>
+    <h1 class="title">{husband} & {wife}</h1>
     <p class="subtitle">{subtitle}</p>
   </div>
 

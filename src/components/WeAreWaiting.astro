@@ -1,0 +1,35 @@
+---
+const { husband, wife } = Astro.props; // You can pass the names as a prop
+
+---
+
+<div class="we-are-waiting">
+    <h2>Te esperamos</h2>
+    <div class="names-list">
+        <p>{husband} y {wife}</p>
+    </div>
+</div>
+
+<style>
+    .we-are-waiting {
+        text-align: center; /* Center the text */
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .names-list {
+        display: flex;
+        flex-direction: column; /* Vertical layout for names */
+        gap: 5px; /* Space between names */
+    }
+
+    h2 {
+        font-size: 24px; /* Title size */
+        margin-bottom: 10px; /* Space below the title */
+    }
+
+    p {
+        font-size: 18px; /* Size of names */
+        margin: 0; /* Remove default margin from paragraphs */
+    }
+</style>
