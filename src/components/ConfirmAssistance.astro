@@ -4,7 +4,8 @@ import Button from "./Button.astro";
 
 <div class="confirmContainer">
     <h2 class="title">CONFIRMAR ASISTENCIA</h2>
-    <p class="subtitle">Por favor confirme su asistencia.</p>
+    <span class="subtitle" >Por favor, confirma tu asistencia.</span>
+    <span class="subtitle2" >!Esperamos que estés allí!</span>
     <Button url="https://forms.gle/3vSMHW2ig4bBLhPV9" text="CONFIRMAR TU ASISTENCIA">
         
     </Button>
@@ -16,7 +17,11 @@ import Button from "./Button.astro";
         margin-bottom: -10px;
     }
     .subtitle{
-        margin-bottom: 20px;
+
+        margin-top: 15px;
+    }
+    .subtitle2{
+        margin-bottom: 15px;
     }
     .confirmContainer{
         display: flex;
